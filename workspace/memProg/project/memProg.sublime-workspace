@@ -1,0 +1,558 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"uin",
+				"uint16_t"
+			],
+			[
+				"ui",
+				"uint8_t"
+			],
+			[
+				"add",
+				"address"
+			],
+			[
+				"0x55",
+				"0x5555"
+			],
+			[
+				"_",
+				"_delay_us"
+			],
+			[
+				"CS",
+				"CS_ROM"
+			],
+			[
+				"read",
+				"ReadByte"
+			],
+			[
+				"uint",
+				"uint8_t"
+			],
+			[
+				"Tx",
+				"TxString"
+			],
+			[
+				"e",
+				"elf"
+			],
+			[
+				"M",
+				"MemProg"
+			],
+			[
+				"a",
+				"addrl"
+			],
+			[
+				"addr",
+				"addrh"
+			],
+			[
+				"wr",
+				"writeByte2"
+			],
+			[
+				"buf",
+				"buf"
+			],
+			[
+				"bu",
+				"buf"
+			],
+			[
+				"re",
+				"readByte2"
+			],
+			[
+				"st",
+				"startAddress"
+			],
+			[
+				"s",
+				"size"
+			],
+			[
+				"inp",
+				"input"
+			],
+			[
+				"POR",
+				"PORTB"
+			],
+			[
+				"po",
+				"PORTB"
+			],
+			[
+				"to",
+				"toggle"
+			],
+			[
+				"OE",
+				"OE_ADDR"
+			],
+			[
+				"DIR",
+				"DIR_DATA"
+			],
+			[
+				"CS_",
+				"CS_R"
+			],
+			[
+				"C",
+				"CS_R"
+			],
+			[
+				"ini",
+				"postIninit"
+			],
+			[
+				"pr",
+				"println"
+			],
+			[
+				"rea",
+				"readByte2"
+			],
+			[
+				"wri",
+				"writeByte2"
+			],
+			[
+				"PORT",
+				"PORTC"
+			],
+			[
+				"n",
+				"nCS"
+			],
+			[
+				"prin",
+				"println"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/C/src/avr/workspace/memProg/src/main.c",
+			"settings":
+			{
+				"buffer_size": 7797,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/src/avr/workspace/memProg/load.bat",
+			"settings":
+			{
+				"buffer_size": 53,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/src/avr/workspace/memProg/src/utils.c",
+			"settings":
+			{
+				"buffer_size": 1021,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/src/avr/workspace/memProg/inc/utils.h",
+			"settings":
+			{
+				"buffer_size": 280,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/src/avr/workspace/memProg/Makefile",
+			"settings":
+			{
+				"buffer_size": 579,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/src/avr/workspace/memProg/src/Makefile",
+			"settings":
+			{
+				"buffer_size": 17,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/src/avr/workspace/memProg/memoryMap.txt",
+			"settings":
+			{
+				"buffer_size": 1323,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/Makefile/Make.sublime-build",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 132.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/src/avr/workspace/memProg/memoryContent.txt",
+		"/C/src/avr/workspace/memProg/Z80 PIO.txt",
+		"/C/DOCUME~1/adameq/LOCALS~1/Temp/7zO0C2A6733/SOURCE.ASM",
+		"/C/Documents and Settings/adameq/Application Data/Sublime Text 2/Packages/User/test.json",
+		"/C/Documents and Settings/adameq/Application Data/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/src/avr/workspace/memProg/project/Makefile",
+		"/C/src/avr/workspace/memProg/project/memProg.sublime-project",
+		"/C/src/avr/workspace/memProg/load.bat",
+		"/C/WinAVR/avr/include/avr/io8535.h",
+		"/C/src/avr/workspace/memProg/src/terminal.glue",
+		"/C/WinAVR/avr/include/util/delay.h",
+		"/C/Documents and Settings/adameq/Application Data/Sublime Text 2/Packages/User/avr_simple_project.json",
+		"/C/src/avr/workspace/memProg/src/utils.c",
+		"/C/src/avr/memProg/src/main.c"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"CS_E",
+			"CS_R",
+			"RAM_ReadByte",
+			"RAM_WriteByte",
+			"txString",
+			"newLine",
+			"OBJCOPY",
+			"FORMAT",
+			"CC",
+			"MCU",
+			"postInInit",
+			"preInInit",
+			"init",
+			"readBuffer",
+			"writeBuffer",
+			"readByte2",
+			"writeByte2"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"CS_ROM",
+			"CS_RAM",
+			"ReadByte",
+			"WriteByte",
+			"TxString",
+			"NewLine",
+			"PostInit",
+			"PreInit",
+			"Init",
+			"RAM_ReadBuffer",
+			"RAM_WriteBuffer",
+			"RAM_ReadByte",
+			"RAM_WriteByte"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 6,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/src/avr/workspace/memProg/src/main.c",
+					"settings":
+					{
+						"buffer_size": 7797,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3218,
+								3218
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2160.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/src/avr/workspace/memProg/load.bat",
+					"settings":
+					{
+						"buffer_size": 53,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								53,
+								53
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Batch File/Batch File.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/src/avr/workspace/memProg/src/utils.c",
+					"settings":
+					{
+						"buffer_size": 1021,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								821,
+								821
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 288.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/src/avr/workspace/memProg/inc/utils.h",
+					"settings":
+					{
+						"buffer_size": 280,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								166,
+								166
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/src/avr/workspace/memProg/Makefile",
+					"settings":
+					{
+						"buffer_size": 579,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								301,
+								301
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Makefile/Makefile.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/src/avr/workspace/memProg/src/Makefile",
+					"settings":
+					{
+						"buffer_size": 17,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17,
+								17
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Makefile/Makefile.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/C/src/avr/workspace/memProg/memoryMap.txt",
+					"settings":
+					{
+						"buffer_size": 1323,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1323,
+								1323
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 432.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 32.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 106.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

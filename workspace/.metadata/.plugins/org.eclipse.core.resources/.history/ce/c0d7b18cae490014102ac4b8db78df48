@@ -1,0 +1,188 @@
+/*
+Memory interface using AVR atmega8535
+Author: adameq
+ */
+
+#include <avr/io.h>
+#include "/usr/lib/avr/include/stdlib.h"
+#define F_CPU 8000000UL
+#include <util/delay.h>
+#include "utils.h"
+#define BAUD 9600
+#define MYUBRR F_CPU/16/BAUD-1
+
+#define 	sbi(port, bit)   (port) |= (1 << (bit))
+#define 	cbi(port, bit)   (port) &= ~(1 << (bit))
+
+#define		ADDRL		PORTA
+#define		ADDRH		PORTB
+#define		DATAIN		PINC
+#define 	DATAOUT		PORTC
+#define		DATADIR		DDRC
+#define		IN			0x00
+#define		OUT			0xFF
+#define		CNTRL		PORTD
+
+#define		RX			PD0
+#define		TX			PD1
+#define		LED			PD2
+#define		CS_E		PD3
+#define 	OE			PD4
+#define		WE			PD5
+#define		CS_R		PD6
+#define		na2			PD7
+
+
+/*BUDU SI MUSET POVOLIT /OE_DATA (+DIR) PRI ZAPISU SPODNI ADRESY DO LATCHE!*/
+
+#define		T_done		"--done--"
+#define		delay		1e6 //1e6us = 100ms = 1s
+//#define		T_adrl
+
+void init(void);
+void write(uint16_t addr, uint8_t data, uint8_t chip);
+uint8_t read(uint16_t addr, uint8_t chip);
+void set_addr(uint16_t addr);
+void readByte();
+void writeByte();
+
+int main(void)
+{
+	//uint16_t i = 0;
+	//uint16_t adr = 0;
+	//uint8_t cnt;
+	uint8_t cmd;
+	//char buf[10];
+	//char *text = "bagr bagr";
+
+	init();
+	usartInit(MYUBRR);
+
+	/*
+	for(i = 0; i < 9; i++)
+	{
+		write(i, text[i], CS_R);
+	}*/
+
+	println("ATM8535 BUS INTERFACE");
+
+	while(1)
+	{
+		cmd = Rx();
+
+		switch (cmd)
+		{
+		case 'w'://write byte
+			writeByte();
+			break;
+		case 'r'://read byte
+			readByte();
+			break;
+		default:
+			println("Unknown command!");
+			break;
+		}
+
+	}
+
+    return 0;
+}
+
+void init(void)
+{
+	DDRA = 0xFF;
+	DDRB = 0xFF;
+	DDRC = 0x00;
+	DDRD = 0xFC;
+
+	PORTC = 0xFF; //pull-ups
+	sbi(CNTRL, CS_E);
+	sbi(CNTRL, CS_R);
+	sbi(CNTRL, OE);
+	sbi(CNTRL, WE);
+}
+
+void write(uint16_t addr, uint8_t data, uint8_t chip)
+{
+	sbi(CNTRL, OE);
+	set_addr(addr);
+	cbi(CNTRL, chip);
+	cbi(CNTRL, WE);
+
+	DATADIR = OUT;
+	DATAOUT = data;
+	_delay_us(delay);
+
+	sbi(CNTRL, WE);
+	sbi(CNTRL, chip);
+}
+
+uint8_t read(uint16_t addr, uint8_t chip)
+{
+	uint8_t data;
+
+	sbi(CNTRL, WE);
+	set_addr(addr);
+	cbi(CNTRL, chip);
+	cbi(CNTRL, OE);
+
+	DATADIR = IN;
+	DATAOUT = 0xFF;
+	_delay_us(delay);
+	data = DATAIN;
+
+	sbi(CNTRL, OE);
+	sbi(CNTRL, chip);
+
+	return data;
+}
+
+void set_addr(uint16_t addr)
+{
+	ADDRH = (addr/256);
+	ADDRL = (addr%256);
+}
+
+void writeByte()
+{
+	uint8_t adrL, adrH, data;
+	uint16_t addr;
+
+	txString("enter byte: ");
+	data = Rx();
+	txString("\r\n");
+	txString("enter address LOW byte:");
+	adrL = Rx();
+	txString("\r\n");
+	txString("enter address HIGH byte:");
+	adrH = Rx();
+	txString("\r\n");
+
+	//buf = {low, high}
+	//a = ((high << 8) & 0xFF00) | low;
+	addr = ((adrH << 8) & 0xFF00) | adrL;
+
+	write(addr, data, CS_R);
+	println("--done--");
+}
+
+void readByte()
+{
+	uint8_t adrL, adrH, data;
+	uint16_t addr;
+
+	println("enter address LOW byte:");
+	adrL = Rx();
+	println("enter address HIGH byte:");
+	adrH = Rx();
+
+	addr = ((adrH << 8) & 0xFF00) | adrL;
+
+	data = read(addr, CS_R);
+
+	txString("read data: ");
+	Tx(data);
+	txString("\r\n");
+
+	println("--done--");
+}

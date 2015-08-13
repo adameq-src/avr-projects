@@ -1,0 +1,63 @@
+Layout:
+
+DEVICE		START		END			SIZE	
+-------------------------------------------------
+ROM			0x0000		0x7FFF		0x8000 (32kB)	A15 = 0, A14 = x
+RAM			0x8000		0xBFFF		0x4000 (16kB)	A15 = 1, A14 = 0
+FREE		0xC000		0xFFFF		0x4000 (16kB)	A15 = 1, A14 = 1
+
+RTL8019		xxxxxx		xxxxxx		0x001F (32B)
+PIO			xxxxxx		xxxxxx		0x0003 (4B)
+SIO
+
+
+
+binary
+ROM
+	- start:	0000 0000  0000 0000
+	- end:		0111 1111  1111 1111
+
+RAM
+	- start:	1000 0000  0000 0000
+	- end:		1011 1111  1111 1111
+
+FREE
+	- start:	1100 0000  0000 0000
+	- end:		1111 1111  1111 1111
+
+
+================================================================
+setup 1:
+
+C = A15
+B = A14
+A = L
+
+
+A15 A14 L
+C 	B 	A |	/Y7	/Y6 /Y5 /Y4 /Y3 /Y2 /Y1 /Y0
+-------------------------------------------
+L 	L 	L |	H	H	H	H	H	H	H	L <-- ROM*
+L 	L 	H |	H	H	H	H	H	H	L 	H <-- not used
+L 	H 	L |	H	H	H	H	H	L	H 	H <-- ROM*
+L 	H 	H |	H	H	H	H	L	H	H 	H <-- not used
+H 	L 	L |	H	H	H	L	H	H	H 	H <-- RAM
+H 	L 	H |	H	H	L	H	H	H	H 	H <-- not used
+H 	H 	L |	H	L	H	H	H	H	H 	H <-- free
+H 	H 	H |	L	H	H	H	H	H	H 	H <-- not used
+				^		^
+				|		|
+
+*tyhle dva vystupy musi jit do ANDu -> /CS_ROM = /Y0*/Y2 (74hc(t)08)
+A14 vest i do ROM
+===============================================================
+CN DATA = D[0..7]
+
+CN ADDR = A[0..13] (+ /OE, /WE, /CS_FREE ... veslo by se to) 
+
+CN CTRL:
+/oe
+/we
+/cs_ram
+/cs_rom
+/cs_free
